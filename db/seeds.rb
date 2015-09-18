@@ -1,6 +1,5 @@
 include RandomData
 
-#Create posts
 50.times do
 
   Post.create!(
