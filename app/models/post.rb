@@ -6,7 +6,8 @@ class Post < ActiveRecord::Base
   has_many :comments
   # the has_many method allows a post to have many comments related to it.
   def censored_title
-    id % 5 == 0  ? "CENSORED" : title
+    (id % 5 == 0)  ? "CENSORED" : title
   end
+  # Puts "Censored" on title's every 5th post"
 
 end
