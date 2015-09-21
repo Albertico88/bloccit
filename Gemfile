@@ -12,7 +12,7 @@
  # #2
  group :development do
    gem 'sqlite3'
-gem 'pry-rails'
+   gem 'pry-rails'
  end
 
  group :development, :test do
@@ -22,7 +22,7 @@ gem 'pry-rails'
  # Use SCSS for stylesheets
  gem 'sass-rails', '~> 5.0'
  # Use Uglifier as compressor for JavaScript assets
- gem 'uglifier', '~> 1.0.3'
+ gem 'uglifier'
  # Use CoffeeScript for .coffee assets and views
  gem 'coffee-rails', '~> 4.1.0'
  # Use jquery as the JavaScript library
