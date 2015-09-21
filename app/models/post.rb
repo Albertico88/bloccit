@@ -5,4 +5,8 @@ class Post < ActiveRecord::Base
   # create a relation to the comment class
   has_many :comments
   # the has_many method allows a post to have many comments related to it.
+  def censored_title
+    id % 5 == 0  ? "CENSORED" : title
+  end
+
 end
