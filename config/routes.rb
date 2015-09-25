@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :advertisements
   resources :posts
   #instructs Rails to create post routes for creating,
   #updating, viewing, and deleting instances of Post
