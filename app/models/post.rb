@@ -3,6 +3,6 @@
 
 class Post < ActiveRecord::Base
   # create a relation to the comment class
-  has_many :comments
+  has_many :comments, dependent: :destroy
   # the has_many method allows a post to have many comments related to it.
 end
