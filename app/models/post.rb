@@ -2,7 +2,7 @@
 # This class will handle the logic and define the behavior for posts.
 
 class Post < ActiveRecord::Base
-  # create a relation to the comment class
+  belongs_to :topic
   has_many :comments, dependent: :destroy
   # the has_many method allows a post to have many comments related to it.
 end
