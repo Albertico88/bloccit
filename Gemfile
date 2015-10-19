@@ -32,3 +32,6 @@
  gem 'turbolinks'
 
  gem 'bootstrap-sass'
+
+# Used for encrypting passwords
+ gem 'bcrypt'

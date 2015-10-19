@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   #instructs Rails to create post routes for creating,
   #updating, viewing, and deleting instances of Post
 
+  resources :users, only: [:new, :create]
+
   get 'about' => 'welcome#about'
 
   get 'faq' => 'welcome#faq'
