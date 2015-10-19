@@ -17,7 +17,7 @@
 
  group :development, :test do
    gem 'rspec-rails', '~> 3.0'
-   gem 'shoulda-matchers', require: false
+   gem 'shoulda-matchers'
  end
 
  # Use SCSS for stylesheets

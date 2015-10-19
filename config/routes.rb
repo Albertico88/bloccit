@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #updating, viewing, and deleting instances of Post
 
   resources :users, only: [:new, :create]
+#only: creates routes for new and create only
 
   get 'about' => 'welcome#about'
 
