@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <%= form_for @user do |f| %>
+    <%= form_for @user, :url => { :action => :confirm } do |f| %>
      <% if @user.errors.any? %>
         <div class="aler alert-danger">
           <h4><%= pluralize(@user.errors.count, "error") %>.</h4>
@@ -18,7 +18,7 @@
 
       <%= form_group_tag(@user.errors[:name]) do %>
         <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, class: 'form-control', palceholder: "Hey there! What's your name?" %>
+        <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Hi there! What's your name?" %>
         <% end %>
 
       <%= form_group_tag(@user.errors[:email]) do %>

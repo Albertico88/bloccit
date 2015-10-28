@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   get 'faq' => 'welcome#faq'
 
+  post 'users/confirm' => 'users#confirm'
+
   root to: 'welcome#index'
   # The root method allows us to declare the default page your app loads when we type the home page URL.
 end
 
-# $ rake routes     Shows all routes
+# $ rake routes       Shows all routes
