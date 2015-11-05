@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
   # Shoulda tests for name
   # Shoulda Matcher NOT WORKING!!!
 
+  it {should have_many(:posts)}
   it {should validate_presence_of(:name)}
   it {should validate_presence_of(:name).is_at_least(1)}
 
