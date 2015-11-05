@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
-    @hi_there = "hi!"
+    @hi_there = "Hello there!"
   end
 
   def faq
