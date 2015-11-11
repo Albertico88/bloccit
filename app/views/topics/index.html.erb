@@ -18,6 +18,12 @@
      <% end %>
    </div>
 
+   <% if moderator_is_authorized_for_edit? %>
+     <div class="col-md-4">
+      <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
+    </div>
+   <% end %>
+
    <% if user_is_authorized_for_topics? %>
     <div class="col-md-4">
      <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
