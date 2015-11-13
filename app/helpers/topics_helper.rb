@@ -1,9 +1,9 @@
 module TopicsHelper
-  def user_is_authorized_for_topics?
+  def user_is_authorized_to_create_and_delete?
     current_user && current_user.admin?
   end
 
-  def moderator_is_authorized_for_edit?
-    current_user.moderator? || current_user.admin?
+  def user_is_authorized_to_edit_only?
+    current_user && (current_user.moderator? || current_user.admin?)
   end
 end
