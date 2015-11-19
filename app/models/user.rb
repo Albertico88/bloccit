@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :posts
+  has_many :comments 
 
   before_save { self.email = email.downcase }
   before_save { self.role ||= :member }
@@ -21,5 +22,5 @@ class User < ActiveRecord::Base
   has_secure_password
 
   enum role: [:member, :admin]
-  
+
 end
