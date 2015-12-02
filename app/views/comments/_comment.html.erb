@@ -5,7 +5,7 @@
       <% if user_is_authorized_for_comment?(comment) %>
         | <%= link_to "Delete", [@post, comment], method: :delete %>
       <% end %>
-
+      
     </small>
     <p><%= comment.body %></p>
   </div>
