@@ -10,6 +10,7 @@
      </p>
     <% @topic.posts.each do |posts| %>
       <div class="media">
+        <%= render partial: 'votes/voter', locals: { posts: posts } %>
         <div class="media-body">
           <h4 class="media-heading">
             <%= render partial: "labels/list", locals: { labels: posts.labels } %>
