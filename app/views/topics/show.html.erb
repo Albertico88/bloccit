@@ -8,20 +8,7 @@
       <br>
       <%= @topic.description %>
      </p>
-    <% @topic.posts.each do |posts| %>
-      <div class="media">
-        <%= render partial: 'votes/voter', locals: { posts: posts } %>
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%= render partial: "labels/list", locals: { labels: posts.labels } %>
-            <%= link_to posts.title, topic_post_path(@topic, posts) %>
-          </h4>
-          <small>
-            submitted <%= time_ago_in_words(posts.created_at) %> ago by <%= posts.user.name %> </br> <%= posts.comments.count %> Comments
-          </small>
-        </div>
-      </div>
-      <% end %>
+    <%= render @topic.posts %>
     </div>
     <% if current_user %>
       <div class="col-md-4">
