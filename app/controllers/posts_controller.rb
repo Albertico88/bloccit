@@ -71,5 +71,5 @@ class PostsController < ApplicationController
          flash[:error] = "You must be an admin to do that."
          redirect_to [post.topic, post]
        end
-     end
+     end 
    end

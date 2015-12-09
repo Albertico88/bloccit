@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
   # we add the votes association to Post. This relates the models and allows us to call post.votes. We also add dependent: :destroy to ensure that votes are destroyed when their parent post is deleted.
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
+  after_create :create_vote
 
 
 #This will display posts in order by their created at date.
@@ -38,3 +39,9 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
 end
+
+private
+
+  def create_vote
+    user.votes.create(value: 1, post: self)
+  end
