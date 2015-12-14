@@ -12,7 +12,8 @@ RSpec.describe Post, type: :model do
   # it { should belong_to(:topic)}
   # it { should have_many(:comments)}
   # it { should have_many(:votes) }
-  # it {should belong_to(:user)}
+  # it { should belong_to(:user) }
+  # it { should have_many(:favorites) }
 
   # --> shoulda-matchers NOT WORKING AT ALL! <--
 
