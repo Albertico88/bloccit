@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   # we add the votes association to Post. This relates the models and allows us to call post.votes. We also add dependent: :destroy to ensure that votes are destroyed when their parent post is deleted.
   has_many :labelings, as: :labelable
   has_many :labels, through: :labelings
-  has_many :favorites, dependent: :destroy 
+  has_many :favorites, dependent: :destroy
 
 
 #This will display posts in order by their created at date.
@@ -20,6 +20,13 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
   # validates the presence of title, body and topic with respective lengths
+
+  after_create :new_post_email
+
+  def new_post_email
+    FavoriteMailer.new_post(user, self).deliver_now
+  end
+
 
   def up_votes
     votes.where(value: 1).count
