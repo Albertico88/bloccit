@@ -1,6 +1,4 @@
-
 include RandomData
-include SessionsHelper
 
 FactoryGirl.define do
   pw = RandomData.random_sentence

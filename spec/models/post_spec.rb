@@ -4,11 +4,11 @@ include RandomData
 RSpec.describe Post, type: :model do
 
   #  we create a parent topic for post
-  let(:topic) {Topic.create!(name: "New Post Title", description: "New Post Body")}
+  let(:topic) { build(:topic) }
+  let(:user) { build(:user) }
+  let(:post) { build(:post) }
 
-  let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
-  let(:post) { topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: user) }
-
+  it { is_expected.to have_many(:labelings) }
   # it { should belong_to(:topic)}
   # it { should have_many(:comments)}
   # it { should have_many(:votes) }
