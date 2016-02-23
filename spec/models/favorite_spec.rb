@@ -2,9 +2,9 @@ require 'rails_helper'
 include RandomData
 
 RSpec.describe Favorite, type: :model do
-  let(:topic) { build(:topic) }
-  let(:user) { build(:user) }
-  let(:post) { build(:post) }
+  let(:topic) { create(:topic) }
+  let(:user) { create(:user) }
+  let(:post) { create(:post) }
   let(:favorite) { Favorite.create!(post: post, user: user) }
 
   it { should belong_to(:post) }

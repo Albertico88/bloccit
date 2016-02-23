@@ -4,9 +4,9 @@ include RandomData
 RSpec.describe Post, type: :model do
 
   #  we create a parent topic for post
-  let(:topic) { build(:topic) }
-  let(:user) { build(:user) }
-  let(:post) { build(:post) }
+  let(:topic) { create(:topic) }
+  let(:user) { create(:user) }
+  let(:post) { create(:post) }
 
   it { is_expected.to have_many(:labelings) }
   # it { should belong_to(:topic)}
