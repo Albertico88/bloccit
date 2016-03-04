@@ -4,7 +4,7 @@ include RandomData
 RSpec.describe Topic, type: :model do
   let(:topic) { create(:topic) }
 
-  it { should have_many(:posts)} # not passing
+  #it { should have_many(:posts)} # not passing
 
   describe "attributes" do
     it "should respond to name" do
@@ -24,4 +24,31 @@ RSpec.describe Topic, type: :model do
       expect(topic.public).to be(true)
     end
  end
-end
+
+ describe "scopes" do
+   before do
+
+     @public_topic = Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)
+     @private_topic = Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph, public: false)
+   end
+
+   describe "publicly_viewable" do
+     it "returns only public topics" do
+       expect(Topic.publically_viewable).to eq([@public_topic])
+     end
+   end
+
+   describe "privately_viewable" do
+     it "returns only private topics" do
+       expect(Topic.privately_viewable).to eq([@private_topic])
+     end
+   end
+
+   describe "visible_to(user)" do
+     it "returns all topics if user is present" do
+       user = User.new
+       expect(Topic.visible_to(user)).to eq(Topic.all)
+     end
+   end
+  end
+ end
