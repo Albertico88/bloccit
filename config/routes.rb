@@ -23,4 +23,11 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
   # The root method allows us to declare the default page your app loads when we type the home page URL.
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :show]
+      resources :topics, only: [:index, :show]
+    end
+  end
 end
